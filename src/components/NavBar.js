@@ -12,7 +12,7 @@ const Nav = styled.section`
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px 20px 0 20px;
-    height: 90px; 
+    height: 90px;
     background: linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.7) 1%,rgba(0,0,0,.5) 61%,transparent);
 `;
 
@@ -39,17 +39,12 @@ const Language = styled.ul`
 
 
 class NavBar extends React.Component {
-    
-
+   
     constructor(props) {
         super(props);
-        this.toggleClass = this.toggleClass.bind(this);
         this.state = {
           showMenu: false
         };
-      }
-      toggleClass() {
-        this.setState({ showMenu: !this.state.showMenu });
       }
 
     render() {
@@ -58,17 +53,22 @@ class NavBar extends React.Component {
                 <div className="landmark-logo">
                 <img src={Landmark} alt="" />
                 </div>
-                <div className="vl"></div>
-                
-                <div className={this.state.showMenu ? "menu-btn close" : "menu-btn"}
-          onClick={this.toggleClass}
-                >
-                    <MenuBtn>
-                        <BtnLine></BtnLine>
-                        <BtnLine></BtnLine>
-                        <BtnLine></BtnLine>
-                    </MenuBtn>
-                </div>
+                <div className="vl"></div>        
+                {
+                    this.props.showMenu === false
+                    ?
+                    <div className={this.props.showMenu ? "menu-btn close" : "menu-btn"} onClick={this.props.toggle}>  
+                        <MenuBtn>
+                            <BtnLine></BtnLine>
+                            <BtnLine></BtnLine>
+                            <BtnLine></BtnLine>
+                        </MenuBtn>
+                    </div>
+                    :
+                    <div onClick={this.props.toggle}>
+                        X
+                    </div>
+                }
                 <Language>
                     <li>EN</li>
                     <li className="register">REGESTER</li>

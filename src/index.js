@@ -2,10 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Banner from './components/Banner';
 import ContentCard from './components/ContentCard';
-
-
-
-
 import './style.css';
 
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Arrow from '../imgs/arrow.png';
-
 import NavBar from './NavBar';
 import NavMenu from './NavMenu';
-
 
 
 
@@ -125,11 +123,12 @@ class Banner extends React.Component {
 
     constructor(props) {
         super(props);
-        this.toggleClass = this.toggleClass.bind(this);
         this.state = {
-          showMenu: false
+          showMenu: false,
         };
+        this.toggleClass = this.toggleClass.bind(this);
       }
+
       toggleClass() {
         this.setState({ showMenu: !this.state.showMenu });
       }
@@ -137,17 +136,28 @@ class Banner extends React.Component {
     render() {
         return (
             <section className="banner">
-            <Background></Background>
-            <BannerText  >
-                <H1 className={this.state.showMenu ? "menu-btn close" : "menu-btn"}>Transforming Vancouver's</H1>
-                <Span className="banner-subtitle">Skyline</Span>
-                <Hr className="scroll-line"></Hr>
-            </BannerText>
-            <ScrollDown className="scroll-down-text"><a href="#landmark">Scroll Down</a></ScrollDown>
-            <ScrollDownArrow className="scroll-down-arrow"><img src={Arrow} alt="arrow" /></ScrollDownArrow>
-            <NavBar onClick={this.toggleClass}/>
-            <NavMenu />
-        </section>
+                <Background></Background>
+                {
+                    this.state.showMenu === false
+                    ?
+                    <React.Fragment>
+                        <BannerText>
+                            <H1 className={this.state.showMenu ? "menu-btn close" : "menu-btn"}>Transforming Vancouver's</H1>
+                            <Span className="banner-subtitle">Skyline</Span>
+                            <Hr className="scroll-line"></Hr>
+                        </BannerText>
+                        <ScrollDown className="scroll-down-text"><a href="#landmark">Scroll Down</a></ScrollDown>
+                        <ScrollDownArrow className="scroll-down-arrow"><img src={Arrow} alt="arrow" /></ScrollDownArrow>
+                    </React.Fragment>
+                    :
+                    <NavMenu
+                        />
+                }
+                <NavBar
+                    toggle={this.toggleClass}
+                    showMenu={this.state.showMenu}
+                    />
+            </section>
         )
     }
 }
