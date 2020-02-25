@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Banner from './components/Banner';
-import ContentCard from './components/ContentCard';
+import LandmarkContent from './components/LandmarkContent';
 import './style.css';
 
 
@@ -9,7 +9,7 @@ function App () {
     return (
         <div>
             <Banner />
-            <ContentCard />
+            <LandmarkContent />
         </div>
     )
 }

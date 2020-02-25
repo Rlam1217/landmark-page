@@ -7,7 +7,7 @@ import NavMenu from './NavMenu';
 
 
 const Background = styled.div`
-    background-image: url(./img/banner.jpg);
+    background-image: url(${require("../imgs/banner.jpg")});
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -124,7 +124,7 @@ class Banner extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          showMenu: false,
+          showMenu: false
         };
         this.toggleClass = this.toggleClass.bind(this);
       }
@@ -150,8 +150,8 @@ class Banner extends React.Component {
                         <ScrollDownArrow className="scroll-down-arrow"><img src={Arrow} alt="arrow" /></ScrollDownArrow>
                     </React.Fragment>
                     :
-                    <NavMenu
-                        />
+                    <NavMenu/>
+                        
                 }
                 <NavBar
                     toggle={this.toggleClass}

@@ -1,6 +1,6 @@
 import React from "react";
 import AsiaStandard from '../imgs/asia-standard.png';
-import Magnum from './images/magnum.png';
+import Magnum from '../imgs/magnum.png';
 import styled, { keyframes } from 'styled-components';
 
 
