@@ -1,6 +1,6 @@
 import React from 'react';
 import Landmark from '../imgs/landmark.svg';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Nav = styled.section`
     z-index: 1;
@@ -25,6 +25,43 @@ const BtnLine = styled.div`
     height: 1px;
     margin: 0 0 5px 0;
     background: #fff;
+`;
+
+
+const BtnLineTopClosed = keyframes`
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(6px);}
+    100% {transform-origin: 30% 40%; transform: rotate(45deg);}
+`;
+
+
+const BtnLineTop = styled.div`
+    width: 28px;
+    height: 1px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: transform .3s ease-in-out;
+    animation: ${BtnLineTopClosed} 1s forwards;
+`;
+
+const BtnLineMiddle = styled.div`
+    opacity: 0;
+`;
+
+const BtnLineBottomClosed = keyframes`
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-6px);}
+    100% {transform-origin: 30% 40%; transform: rotate(-45deg);}
+`;
+
+const BtnLineBottom = styled.div`
+    width: 28px;
+    height: 1px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: transform .3s ease-in-out;
+    animation: ${BtnLineBottomClosed} 1s forwards;
+
 `;
 
 const Language = styled.ul`
@@ -65,9 +102,16 @@ class NavBar extends React.Component {
                         </MenuBtn>
                     </div>
                     :
+
                     <div onClick={this.props.toggle}>
-                        X
-                    </div>
+                        <MenuBtn>
+                            <BtnLineTop></BtnLineTop>
+                            <BtnLineMiddle></BtnLineMiddle>
+                            <BtnLineBottom></BtnLineBottom>
+                        </MenuBtn>
+                       
+                        </div>
+                    
                 }
                 <Language>
                     <li>EN</li>

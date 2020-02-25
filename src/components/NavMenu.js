@@ -1,9 +1,15 @@
 import React from "react";
 import AsiaStandard from '../imgs/asia-standard.png';
 import Magnum from './images/magnum.png';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 
+
+
+const MenuMainOpen = keyframes`
+    0% {opacity: 0;}
+    100% {opacity: 1; }
+`;
 const MenuMain = styled.div`
 
     background: linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.7) 1%,rgba(0,0,0,.5) 61%,transparent);
@@ -11,13 +17,19 @@ const MenuMain = styled.div`
     width: 100%;
     height: 100vh;
     padding: 70px 0px 0px 20px;
-    opacity: 1;
+    opacity: 0;
     font-size: 1.2rem;
-    transition: .3s ease;
     line-height: 2.2rem;
     position: absolute;
     top: 0;
-    transition: visibility 0s linear 300ms, opacity 300ms;
+    transition-timing-function: ease-in;
+    animation: ${MenuMainOpen} 1s forwards;
+    animation-delay: .3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    ul {
+        margin-top: 50px;
+    }
     p {
         width: 300px;
     }
