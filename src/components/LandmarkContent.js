@@ -6,19 +6,29 @@ import LandmarkWhite from '../imgs/landmark-white.svg';
 
 const LandmarkContainer = styled.section`
     width: 100%;
-    margin: 0 auto;
     background-color: #000026;
+    @media (min-width: 1024px) {
+        display: flex;
+        justify-content: center;
+    }
 `;
 
 const RenderImageWrapper = styled.div`
-    max-width: 650px;
+    @media (min-width: 1024px) {
+        img {max-width: 650px;
+        }
+    }
 `;
 
 const Content = styled.div`
-    max-width: 767px;
     width: 100%;
     padding: 70px 25px 70px 25px;
-    background-color: #000026;
+    @media (min-width: 1024px) {
+        max-width: 375px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        }
 `;
 
 const H1 = styled.h1`
@@ -44,7 +54,6 @@ const Link = styled.div`
     color: #ceaf70;
     text-transform: uppercase;
     letter-spacing: 2.29px;
-
 `;
 
 

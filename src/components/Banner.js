@@ -52,6 +52,9 @@ const Span = styled.span`
     animation-delay: .5s;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+    @media (min-width: 768px) {
+        font-size: 4rem;  
+    }
 `;
 
 const leftLine = keyframes`
@@ -95,7 +98,7 @@ const ScrollDown = styled.div`
     a {
         color: white;
         text-decoration: none;
-        }
+    }
 `;
 
 const scrollDownArrow = keyframes`
@@ -105,8 +108,7 @@ const scrollDownArrow = keyframes`
 
 const ScrollDownArrow = styled.div`
     position: absolute;
-    padding-left: 20px;
-    opacity: 0;
+    bottom: 100px;
     padding-left: 20px;
     animation-name: ${scrollDownArrow};
     transition-timing-function: ease-in;
@@ -114,9 +116,9 @@ const ScrollDownArrow = styled.div`
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     img {
-            width: 29px;
-            padding-top: 35px;
-        }
+        width: 29px;
+        padding-top: 35px;
+    }
 `;
 
 class Banner extends React.Component {

@@ -16,8 +16,20 @@ const Nav = styled.section`
     background: linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.7) 1%,rgba(0,0,0,.5) 61%,transparent);
 `;
 
+const LandmarkLogo = styled.div`
+    flex-grow: 1;
+    @media (min-width: 768px) {
+        img {
+               max-width: 160px;
+            }
+       }  
+
+`;
+
 const MenuBtn = styled.div`
-    order: 3;
+   @media (min-width: 768px) {
+    order: 3;        
+    }
 `;
 
 const BtnLine = styled.div`
@@ -70,6 +82,12 @@ const Language = styled.ul`
     flex-basis: 100%;
     flex-direction: column;
     align-items: flex-end;
+    
+    @media (min-width: 768px) {
+        align-items: flex-start;
+        flex-basis: 10%;
+        flex-direction: row;    
+    }
 `;
 
 
@@ -87,30 +105,28 @@ class NavBar extends React.Component {
     render() {
         return (
             <Nav>
-                <div className="landmark-logo">
+                <LandmarkLogo>
                 <img src={Landmark} alt="" />
-                </div>
+                </LandmarkLogo>
                 <div className="vl"></div>        
                 {
                     this.props.showMenu === false
                     ?
+                    <MenuBtn>
                     <div className={this.props.showMenu ? "menu-btn close" : "menu-btn"} onClick={this.props.toggle}>  
-                        <MenuBtn>
-                            <BtnLine></BtnLine>
-                            <BtnLine></BtnLine>
-                            <BtnLine></BtnLine>
-                        </MenuBtn>
+                        <BtnLine></BtnLine>
+                        <BtnLine></BtnLine>
+                        <BtnLine></BtnLine>
                     </div>
+                    </MenuBtn>
                     :
-
-                    <div onClick={this.props.toggle}>
-                        <MenuBtn>
+                    <MenuBtn>
+                        <div onClick={this.props.toggle}>
                             <BtnLineTop></BtnLineTop>
                             <BtnLineMiddle></BtnLineMiddle>
                             <BtnLineBottom></BtnLineBottom>
-                        </MenuBtn>
-                       
                         </div>
+                    </MenuBtn>
                     
                 }
                 <Language>

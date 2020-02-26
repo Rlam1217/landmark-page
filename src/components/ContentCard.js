@@ -5,15 +5,18 @@ import Residences from '../imgs/residences.jpg';
 const ContentDiscover = styled.section`
     position: relative;
     background-color: #000026;
-    max-width: 767px;
     width: 100%;
-    margin: 0 auto;
 `;
 
 const RenderImageWrapper = styled.div`
     display: block;
     width: 100%;
-    margin: 0 auto;
+    @media (min-width: 1024px) {
+        img {
+        max-width: 750px;
+        }
+        display: flex;
+    }
 `;
 
 const ContentWrapper = styled.div`
@@ -23,6 +26,11 @@ const ContentWrapper = styled.div`
     right: 0;
     bottom: 0;
     text-align: center;
+    @media (min-width: 1024px) {
+        position: relative;
+        margin: auto;
+       }
+  
 `;
 
 const H2 = styled.h2`
@@ -30,7 +38,7 @@ const H2 = styled.h2`
     text-align: center;
     letter-spacing: .9px;
     color: white;
-    &:before {
+    &::before {
     content: "Refined";
     display: block;
     font-size: 1rem;
@@ -38,6 +46,9 @@ const H2 = styled.h2`
     letter-spacing: 4.69px;
     text-transform: uppercase;
     text-align: center;
+  }
+  @media (min-width: 1024px) {
+        font-size: 3.7rem;   
   }
 `;
 
@@ -55,7 +66,7 @@ function ContentCard () {
         <RenderImageWrapper>
             <img src={Residences} alt="Landmark On Robson Residences"/>
             <ContentWrapper>
-                <H2 class="title">Residences</H2>
+                <H2>Residences</H2>
                 <Button>Discover the Residences</Button>
             </ContentWrapper>  
         </RenderImageWrapper>
