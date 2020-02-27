@@ -1,19 +1,22 @@
 import React from 'react';
+import App from '../App.css';
 import styled, { keyframes } from 'styled-components';
 import Arrow from '../imgs/arrow.png';
 import NavBar from './NavBar';
 import NavMenu from './NavMenu';
+import BannerLogo from  '../imgs/banner.jpg';
+import background2 from  '../imgs/background2.jpg';
+import background3 from  '../imgs/background3.jpg';
+import background4 from  '../imgs/background4.jpg';
+import background5 from  '../imgs/background5.jpg';
+import background6 from  '../imgs/background2.jpg';
+import background7 from  '../imgs/background7.jpg';
+import background8 from  '../imgs/background8.jpg';
+import background9 from  '../imgs/background9.jpg';
 
 
 
-const Background = styled.div`
-    background-image: url(${require("../imgs/banner.jpg")});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-`;
+
 
 const BannerText = styled.div`
     font-size: 1.4rem;
@@ -23,6 +26,7 @@ const BannerText = styled.div`
     color: #fff;
     text-shadow: 2px 2px 4px hsla(0,0%,39%,.8);
 `;
+
 
 const left = keyframes`
     0% {left: 50px; opacity: 0;}
@@ -126,19 +130,65 @@ class Banner extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          showMenu: false
+          showMenu: false,
+          src: ""
         };
         this.toggleClass = this.toggleClass.bind(this);
+        this.onGo = this.onGo.bind(this);
+      }
+
+      componentDidMount(){
+        this.setState({src: BannerLogo})
       }
 
       toggleClass() {
-        this.setState({ showMenu: !this.state.showMenu });
+        this.setState({ showMenu: !this.state.showMenu , src: BannerLogo });
+      }
+
+      onGo = (img) => {
+        if(img === "Home")
+        {  
+            this.setState({src: BannerLogo})
+        }
+        if(img === "Only One Robson")
+        {  
+            this.setState({src: background2})
+        }
+         if(img === "270° Views")
+        {  
+            this.setState({src: background3})
+        }
+        if(img === "Refined Residences")
+        {  
+            this.setState({src: background4})
+        }
+        if(img === "Club Robson, Lifestyle Concierge Services")
+        {  
+            this.setState({src: background5})
+        }
+        if(img === "Award-Winning Team")
+        {  
+            this.setState({src: background6})
+        }
+        if(img === "Media")
+        {  
+            this.setState({src: background7})
+        }
+        if(img === "Register")
+        {  
+            this.setState({src: background8})
+        }
+        if(img === "Contact")
+        {  
+            this.setState({src: background9})
+        }
       }
 
     render() {
         return (
             <section className="banner">
-                <Background></Background>
+                {/*<Background></Background>*/}
+                <img src={this.state.src} className="background" alt="background"/>
                 {
                     this.state.showMenu === false
                     ?
@@ -152,8 +202,7 @@ class Banner extends React.Component {
                         <ScrollDownArrow className="scroll-down-arrow"><img src={Arrow} alt="arrow" /></ScrollDownArrow>
                     </React.Fragment>
                     :
-                    <NavMenu/>
-                        
+                    <NavMenu onGo={this.onGo}/>
                 }
                 <NavBar
                     toggle={this.toggleClass}

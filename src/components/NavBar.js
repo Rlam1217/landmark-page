@@ -23,7 +23,6 @@ const LandmarkLogo = styled.div`
                max-width: 160px;
             }
        }  
-
 `;
 
 const MenuBtn = styled.div`
@@ -73,7 +72,6 @@ const BtnLineBottom = styled.div`
     background: #fff;
     transition: transform .3s ease-in-out;
     animation: ${BtnLineBottomClosed} 1s forwards;
-
 `;
 
 const Language = styled.ul`
@@ -106,7 +104,7 @@ class NavBar extends React.Component {
         return (
             <Nav>
                 <LandmarkLogo>
-                <img src={Landmark} alt="" />
+                <img src={Landmark} alt="Landmark" />
                 </LandmarkLogo>
                 <div className="vl"></div>        
                 {

@@ -37,6 +37,21 @@ const MenuMain = styled.div`
     a {
         color: #989898ff;
         text-decoration: none;
+        position:relative;
+    }
+    a:after {
+        content:"";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background: #fff;
+        width: 0px;
+        height: 1px;
+        transition: 0.5s linear;
+    }
+
+    a:hover::after {
+        width: 100%;
     }
 `;
 
@@ -44,7 +59,7 @@ const MenuBottom = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 50px 20px 0 0;
-    
+   
     img {
         width: 90px;
     }
@@ -76,47 +91,47 @@ class NavMenu extends React.Component {
                 <MenuMain className="menu-main">
                     <ul>
                         <li rel="one" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Home")}>
                                 Home
                             </a>
                         </li>
-                        <li>
-                            <a href="/" className="menu-link">
-                                <p className="menu-item">Only One Robson</p>
+                        <li rel="one" className="menu-item">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Only One Robson")}>
+                                Only One Robson
                             </a>
                         </li>
                         <li rel="three" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("270° Views")}>
                                 270° Views
                             </a>
                         </li>
                         <li rel="four" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Refined Residences")}>
                                 Refined Residences
                             </a>
                         </li>
                         <li rel="five" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Club Robson, Lifestyle Concierge Services")}>
                                 Club Robson, Lifestyle Concierge Services
                             </a>
                         </li>
                         <li rel="six" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Award-Winning Team")}>
                                 Award-Winning Team
                             </a>
                         </li>
                         <li rel="seven" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Media")}>
                                 Media
                             </a>
                         </li>
                         <li rel="eight" className="menu-item">
-                            <a href="/" className="menu-link">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Register")}>
                                 Register
                             </a>
                         </li>
-                        <li rel="nine" className="menu-item"> 
-                            <a href="/" className="menu-link">
+                        <li rel="nine" className="menu-item">
+                            <a href="/" className="menu-link" onMouseOver={() => this.props.onGo("Contact")}>
                                 Contact
                             </a>
                         </li>
