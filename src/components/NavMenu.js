@@ -17,7 +17,7 @@ const MenuMain = styled.div`
     height: 100vh;
     padding: 70px 0px 0px 20px;
     font-size: 1.5rem;
-    line-height: 3rem;
+    line-height: 2.9rem;
     text-decoration: none;
     color: #989898ff;
     font-weight: 100;
@@ -56,13 +56,15 @@ const MenuMain = styled.div`
 
 const MenuBottom = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 40px 20px 0 0;
     img {
         width: 90px;
     }
     @media (min-width: 768px) {
-    padding-top: 90px;       
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-top: 110px;
     }
 `;
 
@@ -71,11 +73,18 @@ const MenuBottomContact = styled.div`
     color: #ceaf70;
     font-size: .7rem;
     line-height: 1rem;
-    width: 400px;
+    width: 800px;
+    
 `;
 
 const MenuBottomImageWrapper = styled.div`
     width: 90px;
+    padding: 10px 15px 0 0;
+    flex-grow: 1;
+    @media (min-width: 768px) {
+        flex-grow: 0;
+    }
+    
 `;
 
 class NavMenu extends React.Component {

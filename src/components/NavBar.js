@@ -157,8 +157,7 @@ class NavBar extends React.Component {
               })}>
                 <LandmarkLogo>
                     <img src={Landmark} alt="Landmark" />
-                </LandmarkLogo>
-                <div className="vl"></div>        
+                </LandmarkLogo>     
                 {
                     this.props.showMenu === false
                     ?
