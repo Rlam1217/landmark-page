@@ -77,3 +77,27 @@ html {
 body {
 font-family: Helvetica, sans-serif;
 }
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: top 1.1s;
+  
+}
+
+.navbar--hidden {
+  top: -150px;
+}
+
+.background{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.banner {
+  font-size: 0;
+}

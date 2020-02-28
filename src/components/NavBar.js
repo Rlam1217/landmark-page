@@ -1,12 +1,12 @@
 import React from 'react';
+import classnames from 'classnames';
 import Landmark from '../imgs/landmark.svg';
 import styled, { keyframes } from 'styled-components';
 
 const Nav = styled.section`
     z-index: 1;
-    position: fixed;
-    top: 0;
-    transition: top 1.1s;
+    
+    
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -96,13 +96,41 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          showMenu: false
+          showMenu: false,
+          prevScrollpos: window.pageYOffset,
+          visible: true
         };
       }
 
+      // Adds an event listener when the component is mount.
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
+    }
+
+    // Remove the event listener when the component is unmount.
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    // Hide or show the menu.
+    handleScroll = () => {
+        const { prevScrollpos } = this.state;
+
+        const currentScrollPos = window.pageYOffset;
+        const visible = prevScrollpos > currentScrollPos;
+
+        this.setState({
+        prevScrollpos: currentScrollPos,
+        visible
+        });
+    };
+
     render() {
         return (
-            <Nav>
+            
+            <Nav  className={classnames("navbar", {
+                "navbar--hidden": !this.state.visible
+              })}>
                 <LandmarkLogo>
                 <img src={Landmark} alt="Landmark" />
                 </LandmarkLogo>
@@ -132,6 +160,7 @@ class NavBar extends React.Component {
                     <li className="register">REGESTER</li>
                 </Language>
             </Nav>
+            
         )
     }
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import App from '../App.css';
 import styled, { keyframes } from 'styled-components';
 import Arrow from '../imgs/arrow.png';
 import NavBar from './NavBar';
