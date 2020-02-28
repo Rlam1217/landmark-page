@@ -5,8 +5,6 @@ import styled, { keyframes } from 'styled-components';
 
 const Nav = styled.section`
     z-index: 1;
-    
-    
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -76,6 +74,12 @@ const BtnLineBottom = styled.div`
 
 const Language = styled.ul`
     color: #fff;
+    font-size: .6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    li:nth-child(2) {
+        opacity: 0;
+        }
     display: flex;
     flex-basis: 100%;
     flex-direction: column;
@@ -84,7 +88,27 @@ const Language = styled.ul`
     @media (min-width: 768px) {
         align-items: flex-start;
         flex-basis: 10%;
-        flex-direction: row;    
+        flex-direction: row; 
+        &::before {
+        content: "";
+        display: block;
+        border-right: 1px solid #fff;
+        height: 33px;
+        position: absolute;
+        top: 10px;
+        right: 56px;
+        text-transform: uppercase;
+        text-align: center;
+    } 
+        li {
+            padding: 0 13px 0 10px;
+        }
+        li:nth-child(2) {
+            opacity: 1;
+            
+            
+            
+        }
     }
 `;
 
@@ -128,11 +152,11 @@ class NavBar extends React.Component {
     render() {
         return (
             
-            <Nav  className={classnames("navbar", {
+            <Nav className={classnames("navbar", {
                 "navbar--hidden": !this.state.visible
               })}>
                 <LandmarkLogo>
-                <img src={Landmark} alt="Landmark" />
+                    <img src={Landmark} alt="Landmark" />
                 </LandmarkLogo>
                 <div className="vl"></div>        
                 {
@@ -155,10 +179,11 @@ class NavBar extends React.Component {
                     </MenuBtn>
                     
                 }
-                <Language>
-                    <li>EN</li>
-                    <li className="register">REGESTER</li>
-                </Language>
+                    <Language>
+                            <li>En</li>
+                            <li>Register</li>
+                    </Language>
+               
             </Nav>
             
         )

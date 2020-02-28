@@ -75,7 +75,9 @@ html {
 /* ------------------------------------------------ */
 
 body {
-font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica-Neue','Archivo Narrow',Helvetica,sans-serif;
+  background-color: #000026;
+
 }
 
 .navbar {

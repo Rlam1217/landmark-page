@@ -5,6 +5,7 @@ const QuoteSectionContainer = styled.section`
     width: 100%;
     height: 450px;
     margin: 0 auto;
+    padding-top: 100px;
     background-color: #000026;
     color: white;
     font-size: 7rem;
@@ -21,7 +22,7 @@ const H1 = styled.h1`
 `;
 
 const Lwrapper = styled.div`
-
+   
 `;
 
 const Iwrapper = styled.div`

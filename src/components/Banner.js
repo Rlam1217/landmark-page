@@ -105,8 +105,8 @@ const ScrollDown = styled.div`
 `;
 
 const scrollDownArrow = keyframes`
-    0% {left: 70px; opacity: 0;}
-    100% {left: 0px; opacity: 1; }
+    0% {top: 72vh;}
+    100% {top: 77vh; opacity: 1;}
 `;
 
 const ScrollDownArrow = styled.div`

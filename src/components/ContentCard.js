@@ -6,6 +6,7 @@ const ContentDiscover = styled.section`
     position: relative;
     background-color: #000026;
     width: 100%;
+    margin-top: 70px;
 `;
 
 const RenderImageWrapper = styled.div`
@@ -33,16 +34,17 @@ const ContentWrapper = styled.div`
   
 `;
 
-const H2 = styled.h2`
+const H1 = styled.h1`
     font-size: 2rem;
     text-align: center;
     letter-spacing: .9px;
     color: white;
+    margin-bottom: 30px;
     &::before {
     content: "Refined";
     display: block;
+    margin-bottom: 10px;
     font-size: 1rem;
-    color: #ceaf70;
     letter-spacing: 4.69px;
     text-transform: uppercase;
     text-align: center;
@@ -58,6 +60,10 @@ const Button = styled.button`
     border-width: thin;
     padding: 15px 30px 15px 30px;  
     color: #ceaf70;
+    @media (min-width: 1024px) {
+        border: none;
+        font-size: 1.1rem;  
+  }
 `;
 
 function ContentCard () {
@@ -66,7 +72,7 @@ function ContentCard () {
         <RenderImageWrapper>
             <img src={Residences} alt="Landmark On Robson Residences"/>
             <ContentWrapper>
-                <H2>Residences</H2>
+                <H1>Residences</H1>
                 <Button>Discover the Residences</Button>
             </ContentWrapper>  
         </RenderImageWrapper>

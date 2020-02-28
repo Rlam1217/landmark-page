@@ -17,15 +17,14 @@ const MenuMain = styled.div`
     height: 100vh;
     padding: 70px 0px 0px 20px;
     font-size: 1.5rem;
-    line-height: 3.5rem;
+    line-height: 3rem;
     text-decoration: none;
     color: #989898ff;
     font-weight: 100;
     position: absolute;
     top: 0;
     transition-timing-function: ease-in;
-    animation: ${MenuMainOpen} 1s forwards;
-    animation-delay: .3s;
+    animation: ${MenuMainOpen} .5s forwards;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     ul {
@@ -58,10 +57,12 @@ const MenuMain = styled.div`
 const MenuBottom = styled.div`
     display: flex;
     justify-content: space-between;
-    padding: 50px 20px 0 0;
-   
+    padding: 40px 20px 0 0;
     img {
         width: 90px;
+    }
+    @media (min-width: 768px) {
+    padding-top: 90px;       
     }
 `;
 

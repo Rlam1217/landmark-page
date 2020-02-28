@@ -37,7 +37,10 @@ const H1 = styled.h1`
     letter-spacing: 4.69px;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 10px;
+    padding-bottom: 15px;
+    @media (min-width: 1024px) {
+        margin: 0 auto;
+        }
 `;
 
 const LandmarkTitleWrapper = styled.div`
