@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import Residences from '../imgs/residences.jpg';
+
 
 const ContentDiscover = styled.section`
     position: relative;
@@ -35,22 +35,27 @@ const ContentWrapper = styled.div`
 `;
 
 const H1 = styled.h1`
-    font-size: 2rem;
-    text-align: center;
-    letter-spacing: .9px;
-    color: white;
-    margin-bottom: 30px;
-    &::before {
-    content: "Refined";
-    display: block;
-    margin-bottom: 10px;
     font-size: 1rem;
     letter-spacing: 4.69px;
     text-transform: uppercase;
     text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    @media (min-width: 1024px) {
+        font-size: 1rem;   
   }
-  @media (min-width: 1024px) {
-        font-size: 3.7rem;   
+`;
+
+
+const Title = styled.span`
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: .9px;
+    color: white;
+    line-height: 50px;
+    @media (min-width: 1024px) {
+        font-size: 3.7rem;  
+        line-height: 90px;
   }
 `;
 
@@ -60,20 +65,24 @@ const Button = styled.button`
     border-width: thin;
     padding: 15px 30px 15px 30px;  
     color: #ceaf70;
+    text-transform: uppercase;
+    letter-spacing: .9px;
     @media (min-width: 1024px) {
         border: none;
-        font-size: 1.1rem;  
+        font-size: .7rem;  
   }
 `;
 
-function ContentCard () {
+function ContentCard (props) {
+    console.log(props)
     return (
     <ContentDiscover>
         <RenderImageWrapper>
-            <img src={Residences} alt="Landmark On Robson Residences"/>
+            <img src={props.image} alt="Landmark On Robson Residences"/>
             <ContentWrapper>
-                <H1>Residences</H1>
-                <Button>Discover the Residences</Button>
+                <H1 className="subtitle">{props.subtitle} <br/>
+                <Title className="title">{props.title}</Title></H1>
+                <Button>{props.button}</Button>
             </ContentWrapper>  
         </RenderImageWrapper>
     </ContentDiscover>
